@@ -1,4 +1,5 @@
 ﻿using CarBook.Application.Interfaces;
+using CarBook.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,11 @@ namespace CarBook.Persistence.Repositories
         public async Task<T> GetByIdAsync(int id)
         {
             return await _context.Set<T>().FindAsync(id);
+        }
+
+        public Task<Banner> GetByIdAsync(object ıd)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task RemoveAsync(T entity)
