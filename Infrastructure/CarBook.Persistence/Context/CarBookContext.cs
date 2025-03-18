@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace UdemyCarBook.Persistence.Context
+namespace CarBook.Persistence.Context
 {
     public class CarBookContext : DbContext
     {
