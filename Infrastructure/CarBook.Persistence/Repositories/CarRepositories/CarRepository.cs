@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CarBook.Persistence.Context;
+using CarBook.Domain.Entities;
 
 namespace CarBook.Persistence.Repositories.CarRepositories
 {
@@ -34,5 +35,6 @@ namespace CarBook.Persistence.Repositories.CarRepositories
             var values = _context.Cars.Include(x => x.Brand).OrderByDescending(x => x.CarID).Take(5).ToList();
             return values;
         }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using CarBook.Application.Features.Mediator.BlogCommands;
+﻿using CarBook.Application.Features.Mediator.Commands.BlogCommands;
 using CarBook.Application.Features.Mediator.Queries.BlogQueries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
