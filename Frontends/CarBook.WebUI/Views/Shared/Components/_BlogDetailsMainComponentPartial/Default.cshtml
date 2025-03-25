@@ -1,10 +1,12 @@
-﻿<div class="col-md-8 ftco-animate">
+﻿@using CarBook.Dto.BlogDtos
+@model GetBlogById
+<div class="col-md-8 ftco-animate">
     <h2 class="mb-3">
-        CarBook Konforuyla Konya'da Araç Kiralama Deneyimi
+        @Model.Title
     </h2>
-    <p>CarBook’dan kısa ya da uzun süreli araç kiralama işlemi yapabilirsiniz. Dilediğiniz aracı sezonluk olarak da kiralama imkanına sahipsiniz. Temiz ve sürüşe hazır şekilde teslim aldığınız aracı herhangi bir Europcar ofisine teslim edebilirsiniz. Tamamı klimalı olan araçlarımız her türlü hava koşulunda kullanıma uygundur. Şehir dışına çıkmanız gerektiğinde de rent a car hizmetlerimizden faydalanabilirsiniz. </p>
+    <p>@Model.Description</p>
 
-    @await Component.InvokeAsync("_BlogDetailCloudTagByBlogComponentPartial")
+    @await Component.InvokeAsync("_BlogDetailCloudTagByBlogComponentPartial", new { id = ViewBag.blogid })
 
     @await Component.InvokeAsync("_BlogDetailsAuthorAboutComponentPartial")
 
