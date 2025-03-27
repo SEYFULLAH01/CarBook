@@ -12,7 +12,7 @@ namespace CarBook.Domain.Entities
     using System.Text;
     using System.Threading.Tasks;
 
-    namespace UdemyCarBook.Domain.Entities
+    namespace CarBook.Domain.Entities
     {
         public class Brand
         {

@@ -1,6 +1,6 @@
 ﻿using CarBook.Application.Features.CQRS.Commands.BrandCommands;
 using CarBook.Application.Interfaces;
-using CarBook.Domain.Entities.UdemyCarBook.Domain.Entities;
+using CarBook.Domain.Entities.CarBook.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

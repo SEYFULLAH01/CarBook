@@ -1,7 +1,7 @@
 ﻿using CarBook.Application.Features.CQRS.Queries.CarQueries;
 using CarBook.Application.Features.CQRS.Results.CarResults;
 using CarBook.Application.Interfaces;
-using CarBook.Domain.Entities.UdemyCarBook.Domain.Entities;
+using CarBook.Domain.Entities.CarBook.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

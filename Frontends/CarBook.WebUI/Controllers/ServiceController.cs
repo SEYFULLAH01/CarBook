@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace UdemyCarBook.WebUI.Controllers
+namespace CarBook.WebUI.Controllers
 {
     public class ServiceController : Controller
     {

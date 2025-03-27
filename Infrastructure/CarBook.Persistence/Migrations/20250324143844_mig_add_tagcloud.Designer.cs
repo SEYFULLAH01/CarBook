@@ -446,7 +446,7 @@ namespace CarBook.Persistence.Migrations
                     b.ToTable("Testimonials");
                 });
 
-            modelBuilder.Entity("CarBook.Domain.Entities.UdemyCarBook.Domain.Entities.Brand", b =>
+            modelBuilder.Entity("CarBook.Domain.Entities.CarBook.Domain.Entities.Brand", b =>
                 {
                     b.Property<int>("BrandID")
                         .ValueGeneratedOnAdd()
@@ -463,7 +463,7 @@ namespace CarBook.Persistence.Migrations
                     b.ToTable("Brands");
                 });
 
-            modelBuilder.Entity("CarBook.Domain.Entities.UdemyCarBook.Domain.Entities.Car", b =>
+            modelBuilder.Entity("CarBook.Domain.Entities.CarBook.Domain.Entities.Car", b =>
                 {
                     b.Property<int>("CarID")
                         .ValueGeneratedOnAdd()
@@ -531,7 +531,7 @@ namespace CarBook.Persistence.Migrations
 
             modelBuilder.Entity("CarBook.Domain.Entities.CarDescription", b =>
                 {
-                    b.HasOne("CarBook.Domain.Entities.UdemyCarBook.Domain.Entities.Car", "Car")
+                    b.HasOne("CarBook.Domain.Entities.CarBook.Domain.Entities.Car", "Car")
                         .WithMany("CarDescriptions")
                         .HasForeignKey("CarID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -542,7 +542,7 @@ namespace CarBook.Persistence.Migrations
 
             modelBuilder.Entity("CarBook.Domain.Entities.CarFeature", b =>
                 {
-                    b.HasOne("CarBook.Domain.Entities.UdemyCarBook.Domain.Entities.Car", "Car")
+                    b.HasOne("CarBook.Domain.Entities.CarBook.Domain.Entities.Car", "Car")
                         .WithMany("CarFeatures")
                         .HasForeignKey("CarID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -561,7 +561,7 @@ namespace CarBook.Persistence.Migrations
 
             modelBuilder.Entity("CarBook.Domain.Entities.CarPricing", b =>
                 {
-                    b.HasOne("CarBook.Domain.Entities.UdemyCarBook.Domain.Entities.Car", "Car")
+                    b.HasOne("CarBook.Domain.Entities.CarBook.Domain.Entities.Car", "Car")
                         .WithMany("CarPricings")
                         .HasForeignKey("CarID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -589,9 +589,9 @@ namespace CarBook.Persistence.Migrations
                     b.Navigation("Blog");
                 });
 
-            modelBuilder.Entity("CarBook.Domain.Entities.UdemyCarBook.Domain.Entities.Car", b =>
+            modelBuilder.Entity("CarBook.Domain.Entities.CarBook.Domain.Entities.Car", b =>
                 {
-                    b.HasOne("CarBook.Domain.Entities.UdemyCarBook.Domain.Entities.Brand", "Brand")
+                    b.HasOne("CarBook.Domain.Entities.CarBook.Domain.Entities.Brand", "Brand")
                         .WithMany("Cars")
                         .HasForeignKey("BrandID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -625,12 +625,12 @@ namespace CarBook.Persistence.Migrations
                     b.Navigation("CarPricings");
                 });
 
-            modelBuilder.Entity("CarBook.Domain.Entities.UdemyCarBook.Domain.Entities.Brand", b =>
+            modelBuilder.Entity("CarBook.Domain.Entities.CarBook.Domain.Entities.Brand", b =>
                 {
                     b.Navigation("Cars");
                 });
 
-            modelBuilder.Entity("CarBook.Domain.Entities.UdemyCarBook.Domain.Entities.Car", b =>
+            modelBuilder.Entity("CarBook.Domain.Entities.CarBook.Domain.Entities.Car", b =>
                 {
                     b.Navigation("CarDescriptions");
 

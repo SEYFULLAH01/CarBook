@@ -1,5 +1,5 @@
 ﻿using CarBook.Domain.Entities;
-using CarBook.Domain.Entities.UdemyCarBook.Domain.Entities;
+using CarBook.Domain.Entities.CarBook.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

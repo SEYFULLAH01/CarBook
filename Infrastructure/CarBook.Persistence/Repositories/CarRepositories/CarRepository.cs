@@ -1,5 +1,4 @@
 ﻿using CarBook.Application.Interfaces.CarInterfaces;
-using CarBook.Domain.Entities.UdemyCarBook.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CarBook.Persistence.Context;
 using CarBook.Domain.Entities;
+using CarBook.Domain.Entities.CarBook.Domain.Entities;
 
 namespace CarBook.Persistence.Repositories.CarRepositories
 {

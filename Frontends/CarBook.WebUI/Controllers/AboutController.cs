@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace UdemyCarBook.WebUI.Controllers
+namespace CarBook.WebUI.Controllers
 {
     public class AboutController : Controller
     {
