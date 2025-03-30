@@ -4,8 +4,11 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
+
 <div class="page-content">
     <div class="container-fluid">
+
+        <!-- start page title -->
         <div class="row">
             <div class="col-xl-12">
                 <div class="card">
@@ -26,8 +29,9 @@
                                         <th>Sil</th>
                                         <th>Güncelle</th>
                                         <th>Detaylar</th>
+                                        <th>Özellik Ata</th>
                                         <th>Sitede Gör</th>
-
+                                        <th>Fiyat Bilgileri</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,17 +47,14 @@
                                             <td><a href="/AdminCar/RemoveCar/@item.CarID" class="btn btn-outline-danger">Sil</a></td>
                                             <td><a href="/AdminCar/UpdateCar/@item.CarID" class="btn btn-outline-success">Güncelle</a></td>
                                             <td><a href="/Admin/AdminCarFeatureDetail/Index/@item.CarID" class="btn btn-outline-dark">Detaylar</a></td>
-                                            <td><a href="/Admin/AdminCarFeatureDetail/Index/@item.CarID" class="btn btn-outline-warning">Sitede Gör</a></td>
-
-                                            
-
+                                            <td><a href="/Admin/AdminCarFeatureDetail/CreateFeatureByCarID" class="btn btn-outline-info">Özellik Ata</a></td>
+                                            <td><a href="/CarList/CarDetail/@item.CarID" class="btn btn-outline-warning">Sitede Gör</a></td>
+                                            <td><a href="/CarList/CarDetail/@item.CarID" class="btn btn-outline-secondary">Fiyat Bilgileri</a></td>
                                         </tr>
                                     }
-                                   
                                 </tbody>
                             </table>
                             <a href="/AdminCar/CreateCar/" class="btn btn-outline-primary">Yeni Araç Girişi</a>
-
                         </div>
 
                     </div>
@@ -63,7 +64,9 @@
 
             </div>
             <!-- end col -->
-            <!-- end col -->
+
         </div>
-    </div>
+        <!-- end page title -->
+
+    </div> <!-- container-fluid -->
 </div>
