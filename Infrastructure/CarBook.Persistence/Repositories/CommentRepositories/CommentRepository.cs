@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CarBook.Application.Features.RepositoryPattern;
+using CarBook.Domain.Entities;
+using CarBook.Persistence.Context;
 
 namespace CarBook.Persistence.Repositories.CommentRepositories
 {
