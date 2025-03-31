@@ -1,6 +1,7 @@
 ﻿using CarBook.Application.Features.CQRS.Commands.CarCommands;
 using CarBook.Application.Features.CQRS.Handlers.CarHandlers;
 using CarBook.Application.Features.CQRS.Queries.CarQueries;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -73,6 +74,12 @@ namespace CarBook.WebApi.Controllers
         }
         [HttpGet("GetLast5CarsWithBrand")]
         virtual public IActionResult GetLast5CarsWithBrand()
+        {
+            var values = _getLast5CarsWithBrandQueryHandler.Handle();
+            return Ok(values);
+        }
+        [HttpGet("GetLast5CarsWithBrandQueryHandler")]
+        virtual public IActionResult GetLast5CarsWithBrandQueryHandler()
         {
             var values = _getLast5CarsWithBrandQueryHandler.Handle();
             return Ok(values);
