@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CarBook.Dto.RentACarDtos;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
@@ -14,30 +15,34 @@ namespace CarBook.WebUI.Controllers
         {
             _httpClientFactory = httpClientFactory;
         }
-        public async Task<IActionResult> Index(FilterRentACarDto filterRentACarDto)
+        public async Task<IActionResult> Index(int id)
         {
-            var bookpickdate = TempData["bookpickdate"];
-            var bookoffdate = TempData["bookoffdate"];
-            var timepick = TempData["timepick"];
-            var timeoff = TempData["timeoff"];
+
             var locationID = TempData["locationID"];
 
-            filterRentACarDto.locationID = int.Parse(locationID.ToString());
-            filterRentACarDto.available = true;
+            //filterRentACarDto.locationID = int.Parse(locationID.ToString());
+            //filterRentACarDto.available = true;
+            if (locationID != null)
+            {
+                id = int.Parse(locationID.ToString());
+            }
+            else
+            {
+                // Hata durumunda ne yapmak istiyorsanız onu yazın
+                // Örneğin varsayılan bir ID verebilirsiniz:
+                id = 0;
+            }
 
-            ViewBag.bookpickdate = bookpickdate;
-            ViewBag.bookoffdate = bookoffdate;
-            ViewBag.timepick = timepick;
-            ViewBag.timeoff = timeoff;
+
             ViewBag.locationID = locationID;
 
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(filterRentACarDto);
-            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("https://localhost:7139/api/RentACars", stringContent);
+            var responseMessage = await client.GetAsync($"https://localhost:7139/api/RentACars?locationID={id}&available=true");
             if (responseMessage.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<FilterRentACarDto>>(jsonData);
+                return View(values);
             }
             return View();
         }

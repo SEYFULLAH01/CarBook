@@ -8,6 +8,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using CarBook.Application.Interfaces.RentACarInterfaces;
+using CarBook.Domain.Entities;
+using CarBook.Persistence.Context;
 
 namespace CarBook.Persistence.Repositories.RentACarRepositories
 {
@@ -25,3 +28,4 @@ namespace CarBook.Persistence.Repositories.RentACarRepositories
         }
     }
 }
+//var values = _context.CarPricings.Include(x => x.Car).ThenInclude(y => y.Brand).Include(x => x.Pricing).Where(z => z.PricingID == 2).ToList();
