@@ -2,9 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
+using CarBook.Dto.TestimonialDtos;
 
 namespace CarBook.WebUI.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Route("Admin/AdminTestimonial")]
     public class AdminTestimonialController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
