@@ -23,6 +23,7 @@ namespace CarBook.WebUI.Controllers
         {
             ViewBag.v1 = "Araç Kiralama";
             ViewBag.v2 = "Araç Rezervasyon Formu";
+            ViewBag.v3 = id;
             
 
 
